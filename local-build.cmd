@@ -5,9 +5,9 @@ set GOPATH=%USERPROFILE%\Downloads\gopath
 
 set PATH=^
 %USERPROFILE%\Downloads\PortableGit\bin;^
-%GOROOT%\bin;
+%GOROOT%\bin;^
+%GOPATH%\bin;
 
-go get github.com/akavel/rsrc &&^
+go install github.com/akavel/rsrc &&^
 rsrc -manifest test.manifest -o rsrc.syso &&^
-go build -ldflags="-H windowsgui" &&^
-pause
+go build -ldflags="-H windowsgui"
