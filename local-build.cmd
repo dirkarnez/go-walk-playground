@@ -7,5 +7,7 @@ set PATH=^
 %USERPROFILE%\Downloads\PortableGit\bin;^
 %GOROOT%\bin;
 
-go build main.go &&^
+go get github.com/akavel/rsrc &&^
+rsrc -manifest test.manifest -o rsrc.syso &&^
+go build -ldflags="-H windowsgui" &&^
 pause
